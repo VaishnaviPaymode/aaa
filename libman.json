@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.3.3",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "jquery@3.7.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "jquery-validate@1.21.0",
+      "destination": "wwwroot/lib/jquery-validate/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "bootstrap-icons@1.11.3",
+      "destination": "wwwroot/lib/bootstrap-icons/",
+      "files": [
+        "bootstrap-icons.svg",
+        "font/fonts/bootstrap-icons.woff",
+        "font/fonts/bootstrap-icons.woff2",
+        "font/bootstrap-icons.css",
+        "font/bootstrap-icons.json",
+        "font/bootstrap-icons.min.css"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "jquery-validation-globalize@0.1.1",
+      "destination": "wwwroot/lib/jquery-validation-globalize/",
+      "files": [
+        "README.md",
+        "jquery.validate.globalize.min.js.map",
+        "jquery.validate.globalize.min.js",
+        "jquery.validate.globalize.js"
+      ]
+    },
+    {
+      "library": "globalize@1.7.0",
+      "destination": "wwwroot/lib/globalize/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "flag-icons@7.2.3",
+      "destination": "wwwroot/lib/flag-icons/"
+    }
+  ]
+}

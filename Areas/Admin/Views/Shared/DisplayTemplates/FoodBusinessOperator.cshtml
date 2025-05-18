@@ -1,0 +1,35 @@
+﻿@model FoodBusinessOperator
+
+<dl class="row">
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.Type)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Type)
+    </dd>
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-10">
+        @if (!String.IsNullOrWhiteSpace(Model.Name))
+        {
+            @Html.DisplayFor(model => model.Name)
+        }
+        else
+        {
+            <span>@ViewBag.ProducerName</span>
+        }
+    </dd>
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.Address)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Address)
+    </dd>
+    <dt class="col-sm-2 mb-2">
+        @Html.DisplayNameFor(model => model.AdditionalInfo)
+    </dt>
+    <dd class="col-sm-10">
+        <pre>@Html.DisplayFor(model => model.AdditionalInfo)</pre>
+    </dd>
+</dl>

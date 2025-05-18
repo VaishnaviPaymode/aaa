@@ -1,0 +1,211 @@
+﻿@model ELabel.ViewModels.WineProductEditDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="mb-3">Edit</h1>
+
+<form asp-action="Edit" id="form">
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+
+            <h4>Product</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Product").FirstOrDefault()?.Description</p>
+            <hr />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
+            <input type="hidden" asp-for="Id" />
+            
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" aria-describedby="NameHelp" autocomplete="off" />
+                <div id="NameHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Name").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Brand" class="form-label"></label>
+                <input asp-for="Brand" class="form-control" aria-describedby="BrandHelp" autocomplete="off" />
+                <div id="BrandHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Brand").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Volume" class="form-label"></label>
+                <input asp-for="Volume" class="form-control" aria-describedby="VolumeHelp" />
+                <div id="VolumeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Volume").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Volume" class="text-danger"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+
+            <h4>Wine Details</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WineInformation").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.WineInformation)
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h4>Ingredients</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "ProductIngredients").FirstOrDefault()?.Description</p>
+            <hr />
+
+            <div id="productIngredientsContainer">
+                @Html.EditorFor(model => model.ProductIngredients)
+            </div>
+
+            <div class="mb-3">
+                <!--
+                <a id="buttonRemove" class="btn btn-link ps-0">Remove</a> |
+                -->
+                <a id="buttonAdd" class="btn btn-link ps-0">Add</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <div class="mb-3">
+                <label asp-for="PackagingGases" class="form-label"></label>
+                <select asp-for="PackagingGases" asp-items="Html.GetEnumSelectList<PackagingGases>()" class="form-select" aria-describedby="PackagingGasesHelp">
+                </select>
+                <div id="PackagingGasesHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "PackagingGases").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="PackagingGases" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h4>Nutrition information</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "NutritionInformation").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.NutritionInformation)
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h4>Responsible consumption</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "ResponsibleConsumption").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.ResponsibleConsumption)
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h4>Certifications</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Certifications").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.Certifications)
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h4>Food Business Operator</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "FoodBusinessOperator").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.FoodBusinessOperator)
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+
+            <h4>Logistics</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Logistics").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.Logistics)
+
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+
+            <h4>Portability</h4>
+            <p class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Portability").FirstOrDefault()?.Description</p>
+            <hr />
+
+            @Html.EditorFor(model => model.Portability)
+
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <div class="col-lg-6">
+
+            <div class="mb-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<div>
+    @*
+    @if (Model != null && Model.Image != null)
+    {
+        <a asp-action="DeleteImage" asp-route-id="@Model?.Id">Delete image</a> <span>|</span>
+    }
+    <a asp-action="ChangeImage" asp-route-id="@Model?.Id">Change image</a> |
+    *@
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+
+            $("#buttonRemove").on('click', function () {
+                $.ajax({
+                    async: true,
+                    data: $('#form').serialize(),
+                    type: "POST",
+                    url: '/Admin/Product/RemoveIngredient',
+                    success: function (partialView) {
+                        console.log("partialView: " + partialView);
+                        $('#productIngredientsContainer').html(partialView);
+                    }
+                });
+            });
+
+            $("#buttonAdd").on('click', function () {
+                $.ajax({
+                    async: true,
+                    data: $('#form').serialize(),
+                    type: "POST",
+                    url: '/Admin/Product/AddIngredient',
+                    success: function (partialView) {
+                        console.log("partialView: " + partialView);
+                        $('#productIngredientsContainer').html(partialView);
+                    }
+                });
+            });
+        });
+    </script>
+}

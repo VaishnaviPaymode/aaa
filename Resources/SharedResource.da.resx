@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string"/>
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="mimetype" type="xsd:string"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string"/>
+							<xsd:attribute name="name" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Acidity regulator" xml:space="preserve">
+		<value>Surhedsregulerende middel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Activators for alcoholic and malolactic fermentation" xml:space="preserve">
+		<value>Aktivatorer til alkoholisk og malolaktisk gæring</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Admin Dashboard" xml:space="preserve">
+		<value>Administration Dashboard</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Aleppo pine resin" xml:space="preserve">
+		<value>Aleppo fyrharpiks</value>
+		<comment>Other</comment>
+	</data>
+	<data name="Antioxidant" xml:space="preserve">
+		<value>Antioxidant</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Ascorbic acid" xml:space="preserve">
+		<value>Ascorbinsyre</value>
+		<comment>Antioxidant</comment>
+	</data>
+	<data name="Bottled and produced by" xml:space="preserve">
+		<value>Aftappet og produceret af</value>
+		<comment>Deprecated. Use "Produced and Bottled by"</comment>
+	</data>
+	<data name="Bottled by" xml:space="preserve">
+		<value>Aftappet af</value>
+		<comment>Indication of the bottler.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Bottled in a protective atmosphere" xml:space="preserve">
+		<value>Aftappet i en beskyttende atmosfære</value>
+		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+	</data>
+	<data name="Bottling may happen in a protective atmosphere" xml:space="preserve">
+		<value>Aftapning kan ske i en beskyttende atmosfære</value>
+		<comment>Packaging gases&#13; Article 48a(6) of Delegated Regulation (EU) 2019/33 clearly states, ‘the indication of additives falling under the&#13; category “packaging gases” in the list of ingredients may be replaced by the specific particular “Bottled in a&#13; protective atmosphere” or “Bottling may happen in a protective atmosphere”’. &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+	</data>
+	<data name="Brut" xml:space="preserve">
+		<value>Brut</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Brut nature" xml:space="preserve">
+		<value>Brut natur</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Calcium sulphate" xml:space="preserve">
+		<value>Calciumsulfat</value>
+		<comment>AcidityRegulator</comment>
+	</data>
+	<data name="Caramel" xml:space="preserve">
+		<value>Karamel</value>
+		<comment>Other</comment>
+	</data>
+	<data name="Carbohydrate" xml:space="preserve">
+		<value>Kulhydrat</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Carbon dioxide" xml:space="preserve">
+		<value>Carbondioxid</value>
+		<comment>RawMaterial</comment>
+	</data>
+	<data name="Carboxymethylcellulose" xml:space="preserve">
+		<value>Carboxymethylcellulose</value>
+		<comment>Stabiliser</comment>
+	</data>
+	<data name="Certifications" xml:space="preserve">
+		<value>Certificeringer</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Certified Vegan by V-Label" xml:space="preserve">
+		<value>Certificeret vegansk af V-Label</value>
+		<comment>https://www.v-label.com/</comment>
+	</data>
+	<data name="Certified Vegetarian by V-Label" xml:space="preserve">
+		<value>Certificeret vegetar af V-Label</value>
+		<comment>https://www.v-label.com/</comment>
+	</data>
+	<data name="Certified organic based on EU-Guidelines" xml:space="preserve">
+		<value>Certificeret økologisk baseret på EU-retningslinjer</value>
+		<comment>Certifications</comment>
+	</data>
+	<data name="Citric acid" xml:space="preserve">
+		<value>Citronsyre</value>
+		<comment>Stabiliser</comment>
+	</data>
+	<data name="Clarifying agent" xml:space="preserve">
+		<value>Klargørende middel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Concentrated grape must" xml:space="preserve">
+		<value>Koncentreret druemost</value>
+		<comment>EnrichmentSubstance</comment>
+	</data>
+	<data name="Contains negligible amounts of" xml:space="preserve">
+		<value>Indeholder ubetydelige mængder af</value>
+		<comment>REGULATION (EU) No 1169/2011 Article 34 Section 5:&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02011R1169-20180101#tocId242</comment>
+	</data>
+	<data name="Correction of defect" xml:space="preserve">
+		<value>Korrektion af defekt</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Dimethyldicarbonate" xml:space="preserve">
+		<value>Dimethyldicarbonat</value>
+		<comment>Preservative</comment>
+	</data>
+	<data name="Don't drink during pregnancy and breastfeeding" xml:space="preserve">
+		<value>Drik ikke under graviditet og amning</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when below legal drinking age" xml:space="preserve">
+		<value>Drik ikke, når du er under den lovlige drikkealder</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Don't drink when driving a car, motorbike or operating machinery" xml:space="preserve">
+		<value>Drik ikke, når du kører bil, motorcykel eller betjener maskiner</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Dry" xml:space="preserve">
+		<value>Tør</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Egg" xml:space="preserve">
+		<value>Æg</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Electronic label provided by" xml:space="preserve">
+		<value>Elektronisk etiket leveret af</value>
+		<comment>Footer</comment>
+	</data>
+	<data name="Energy" xml:space="preserve">
+		<value>Energi</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Enrichment substance" xml:space="preserve">
+		<value>Berigelsesstof</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Enzyme" xml:space="preserve">
+		<value>Enzym</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Expedition liqueur" xml:space="preserve">
+		<value>Ekspedition likør</value>
+		<comment>RawMaterial</comment>
+	</data>
+	<data name="Extra brut" xml:space="preserve">
+		<value>Ekstra brut</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Extra dry" xml:space="preserve">
+		<value>Ekstra tør</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Fat" xml:space="preserve">
+		<value>Fedt</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Fermentation agent" xml:space="preserve">
+		<value>Fermenteringsmiddel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Fortified wine" xml:space="preserve">
+		<value>Fortificeret vin</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Fumaric acid" xml:space="preserve">
+		<value>Fumarsyre</value>
+		<comment>Stabiliser</comment>
+	</data>
+	<data name="Gases and packaging gas" xml:space="preserve">
+		<value>Gasser og emballagegas</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Grapes" xml:space="preserve">
+		<value>Druer</value>
+		<comment>RawMaterial&#13; &#13; Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+		<comment>Ingredients shall be designated by their specific name, with the exceptions provided for in the FIC Regulation and in Delegated Regulation (EU) 2019/33 (e.g. ‘grapes’ referring to the raw material).</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208</comment>
+	</data>
+	<data name="Gum arabic" xml:space="preserve">
+		<value>Gummi arabisk</value>
+		<comment>Stabiliser</comment>
+	</data>
+	<data name="Home Page" xml:space="preserve">
+		<value>Hjemmeside</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Imported by" xml:space="preserve">
+		<value>Importeret af</value>
+		<comment>Indication of the importer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Ingredients" xml:space="preserve">
+		<value>Ingredienser</value>
+		<comment>Ingredients&#13; &#13; Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine production.&#13; &#13; https://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
+		<comment>Table 2 of Part A of Annex I of Delegated Regulation (EU) 2019/934 identifies the full list of additives and processing aids that can be used in wine productionhttps://eur-lex.europa.eu/search.html?scope=EURLEX&amp;text=2019%2F934&amp;lang=en&amp;type=quick&amp;qid=1701362513497</comment>
+	</data>
+	<data name="Ingredients and nutrition information" xml:space="preserve">
+		<value>Ingredienser og ernæringsoplysninger</value>
+		<comment>Open graph meta description.</comment>
+	</data>
+	<data name="Lactic acid" xml:space="preserve">
+		<value>Mælkesyre</value>
+		<comment>AcidityRegulator</comment>
+	</data>
+	<data name="Malic acid" xml:space="preserve">
+		<value>Æblesyre</value>
+		<comment>AcidityRegulator</comment>
+	</data>
+	<data name="Medium dry" xml:space="preserve">
+		<value>Middel tør</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Medium sweet" xml:space="preserve">
+		<value>Middel sød</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Metatartaric acid" xml:space="preserve">
+		<value>Metatartarsyre</value>
+		<comment>Stabiliser</comment>
+	</data>
+	<data name="Milk" xml:space="preserve">
+		<value>Mælk</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk casein" xml:space="preserve">
+		<value>Mælk kasein</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk products" xml:space="preserve">
+		<value>Mælkeprodukter</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Milk protein" xml:space="preserve">
+		<value>Mælkeprotein</value>
+		<comment>ClarifyingAgent</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Nutrition Information" xml:space="preserve">
+		<value>Næringsdeklaration</value>
+		<comment>Nutrition Information&#13; &#13; The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.&#13; &#13; The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+		<comment>The presentation of the nutrition declaration is regulated in Article 34 of the FIC Regulation.</comment>
+		<comment>The order of presentation of the different elements of the nutrition declaration is defined in Annex XV of the FIC Regulation.</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+	</data>
+	<data name="Nutritions per" xml:space="preserve">
+		<value>Ernæring pr</value>
+		<comment>Nutrition Information&#13; &#13; Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).&#13; &#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+		<comment>Energy values and nutrition values must be indicated per 100 g or per 100 ml (Article 32(2) of the FIC Regulation).</comment>
+		<comment>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011R1169-20180101&amp;qid=1701362311604</comment>
+	</data>
+	<data name="Open E-Label project on GitHub" xml:space="preserve">
+		<value>Åbn E-Label-projekt på GitHub</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Open-source solution for electronic labels" xml:space="preserve">
+		<value>Open source-løsning til elektroniske etiketter</value>
+		<comment>Home</comment>
+	</data>
+	<data name="Orange wine" xml:space="preserve">
+		<value>Orange vin</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Other ingredient" xml:space="preserve">
+		<value>Anden ingrediens</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Packaged by" xml:space="preserve">
+		<value>Pakket af</value>
+		<comment>In case of containers other than bottles, the words ‘packager’ and ‘packaged by (…)’ shall replace the words ‘bottler’ and ‘bottled by (…)’ respectively&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Page not found" xml:space="preserve">
+		<value>Siden blev ikke fundet</value>
+		<comment>404 page title</comment>
+	</data>
+	<data name="Potassium polyaspartate" xml:space="preserve">
+		<value>Kaliumpolyaspartat</value>
+		<comment>Stabiliser</comment>
+	</data>
+	<data name="Potassium sorbate" xml:space="preserve">
+		<value>Kaliumsorbat</value>
+		<comment>Preservative</comment>
+	</data>
+	<data name="Preservative" xml:space="preserve">
+		<value>Konserveringsmiddel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Produced and Bottled by" xml:space="preserve">
+		<value>Produceret og aftappet af</value>
+		<comment>Indication of the producer and bottler (if they concern the same natural or legal person).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Produced by" xml:space="preserve">
+		<value>Produceret af</value>
+		<comment>Indication of the producer.&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Protein" xml:space="preserve">
+		<value>Protein</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Raw material" xml:space="preserve">
+		<value>Råstof</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Red wine" xml:space="preserve">
+		<value>rødvin</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Responsible Consumption" xml:space="preserve">
+		<value>Ansvarligt forbrug</value>
+		<comment>Responsible Consumption</comment>
+	</data>
+	<data name="Rosé wine" xml:space="preserve">
+		<value>Rosévin</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Salt" xml:space="preserve">
+		<value>Salt</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="Select language" xml:space="preserve">
+		<value>Vælg sprog</value>
+		<comment>Header message</comment>
+	</data>
+	<data name="Select theme" xml:space="preserve">
+		<value>Vælg tema</value>
+		<comment>Header message</comment>
+	</data>
+	<data name="Sequestrant" xml:space="preserve">
+		<value>Beslaglæggelse</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sold by" xml:space="preserve">
+		<value>Solgt af</value>
+		<comment>Indication of the vendor (if not the producer).&#13; Regulated by Article 46 of Commission Delegated Regulation (EU) 2019/33.&#13; https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02019R0033-20231208#art_46</comment>
+	</data>
+	<data name="Sparkling wine" xml:space="preserve">
+		<value>Mousserende vin</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Stabiliser" xml:space="preserve">
+		<value>Stabilisator</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Sucrose" xml:space="preserve">
+		<value>Saccharose</value>
+		<comment>EnrichmentSubstance</comment>
+	</data>
+	<data name="Sugar" xml:space="preserve">
+		<value>Sukker</value>
+		<comment>EnrichmentSubstance</comment>
+	</data>
+	<data name="Sulphites" xml:space="preserve">
+		<value>Sulfitter</value>
+		<comment>Preservative</comment>
+		<comment>1</comment>
+	</data>
+	<data name="Sweet" xml:space="preserve">
+		<value>Sød</value>
+		<comment>Check glossary with tag "Wine sugar content"</comment>
+	</data>
+	<data name="Sweetener" xml:space="preserve">
+		<value>Sødemiddel</value>
+		<comment>IngredientCategory</comment>
+	</data>
+	<data name="Tartaric acid" xml:space="preserve">
+		<value>Vinsyre</value>
+		<comment>AcidityRegulator</comment>
+	</data>
+	<data name="This label isn't available. Sorry about that." xml:space="preserve">
+		<value>Denne etiket er ikke tilgængelig. Det er jeg ked af.</value>
+		<comment>404 page content</comment>
+	</data>
+	<data name="Tirage liqueur" xml:space="preserve">
+		<value>Tirage likør</value>
+		<comment>RawMaterial</comment>
+	</data>
+	<data name="Web Accessibility Guidelines" xml:space="preserve">
+		<value>Retningslinjer for webtilgængelighed</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="Web Content Accessibility Guidelines (WCAG) 2.2" xml:space="preserve">
+		<value>Web Content Accessibility Guidelines (WCAG) 2.2</value>
+		<comment>Footer message</comment>
+	</data>
+	<data name="White wine" xml:space="preserve">
+		<value>hvidvin</value>
+		<comment>WineType</comment>
+	</data>
+	<data name="Yeast mannoproteins" xml:space="preserve">
+		<value>Gær mannoproteiner</value>
+		<comment>Stabiliser</comment>
+	</data>
+	<data name="of which Saturates" xml:space="preserve">
+		<value>heraf mættede stoffer</value>
+		<comment>Nutrition Information</comment>
+	</data>
+	<data name="of which Sugars" xml:space="preserve">
+		<value>heraf sukkerarter</value>
+		<comment>Nutrition Information</comment>
+	</data>
+</root>

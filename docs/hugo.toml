@@ -1,0 +1,70 @@
+baseURL = 'https://filipecarneiro.github.io/ELabel/'
+title = 'Open E-Label'
+author = "Filipe Carneiro"
+copyright = "Open-source <a class=\"text-muted text-decoration-none\" href=\"https://github.com/filipecarneiro/ELabel/blob/main/LICENSE.txt\">MIT Licensed</a>."
+
+theme = 'hugo-bootstrap-theme'
+languageCode = 'en-us'
+
+disableKinds = ['taxonomy', 'term']
+
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+[menus]
+#[[menus.main]]
+#  name = "Code"
+#  url = "https://github.com/filipecarneiro/ELabel"
+#  pos = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-github'><use href='/ELabel/images/feather/feather-sprite.svg#github'/></svg>"
+#  weight = 20
+
+#[[menus.main]]
+#  name = "Docker"
+#  url = "https://hub.docker.com/r/fcarneiro/elabel"
+#  weight = 30
+
+[[menus.social]]
+  name = "GitHub"
+  pre = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-github'><use href='/ELabel/images/feather/feather-sprite.svg#github'/></svg>"
+  url = "https://github.com/filipecarneiro/ELabel"
+  weight = 10
+  title = "See project on GitHub"
+
+[[menus.social]]
+  name = "Docker Hub"
+  pre = "<svg xmlns='http://www.w3.org/2000/svg' class='feather feather-package'><use href='/ELabel/images/feather/feather-sprite.svg#package'/></svg>"
+  url = "https://hub.docker.com/r/fcarneiro/elabel"
+  weight = 20
+  title = "See project on Docker Hub"
+
+[[menus.footer]]
+  name = "GitHub"
+  url = "https://github.com/filipecarneiro/ELabel"
+  weight = 10
+  title = "See project on GitHub"
+
+[[menus.footer]]
+  name = "Docker Hub"
+  url = "https://hub.docker.com/r/fcarneiro/elabel"
+  weight = 1
+  title = "See project on Docker Hub"
+
+[params]
+description = "Open-source solution for <strong>electronic labels</strong> on <strong>wine</strong> bottles."
+images = ['images/icon.svg','images/screenshot.png']
+mainMenuLogo = "images/icon.svg"
+
+[params.options]
+bootStrapJs = true
+breadCrumb = false
+listCategoryFilter = false
+listTagFilter = false
+
+[module]
+  [[module.mounts]]
+  source = "assets"
+  target = "assets"
+[[module.mounts]]
+  source = "static"
+  target = "static"

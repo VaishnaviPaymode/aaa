@@ -1,0 +1,44 @@
+﻿@inject IHtmlLocalizer<SharedResource> Localizer
+<!DOCTYPE html>
+<html lang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName" data-bs-theme="auto">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src data:;">
+    <title>@ViewData["Title"] - E-Label</title>
+    <meta name="description" content="Open E-Label - @Localizer["Open-source solution for electronic labels"]">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg">
+    <link rel="icon" type="image/png" href="~/favicon.png">
+    <link rel="stylesheet" href="~/css/label.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true">
+    @await RenderSectionAsync("MetaTags", required: false)
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="header">
+        <nav class="navbar text-body-secondary bg-body-tertiary">
+            <div class="container">
+                <div class="">
+                    @await Html.PartialAsync("_SelectThemePartial")
+                </div>
+                <div class="ms-auto">
+                    @await Html.PartialAsync("_SelectLanguagePartial")
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main class="py-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="mt-auto text-center border-top text-body-secondary bg-body-tertiary py-3 mt-3">
+        <div class="container">
+            <small>@Localizer["Electronic label provided by"]&nbsp;<a href="https://github.com/filipecarneiro/ELabel#readme" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Open E-Label project on GitHub"]">Open E-Label</a>.</small>
+            <span>&nbsp;</span>
+            <small><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener" class="text-reset text-decoration-none" title="@Localizer["Web Content Accessibility Guidelines (WCAG) 2.2"]">@Localizer["Web Accessibility Guidelines"]</a>.</small>
+        </div>
+    </footer>
+    <script src="~/js/label.es5.min.js" asp-append-version="true"></script>
+</body>
+</html>

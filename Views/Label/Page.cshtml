@@ -1,0 +1,184 @@
+﻿@model ELabel.ViewModels.LabelDto
+@inject IHtmlLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = @Model.Title;
+}
+
+<div class="text-center py-3">
+    <h1 class="fs-1 text-uppercase">@Model.Title</h1>
+    <h2 class="fs-1">@Model.Brand</h2>
+    <p class="fs-3">@Model.WineInformation?.Appellation</p>
+</div>
+
+@if (Model.Images != null && Model.Images.Count > 0)
+{
+    ImageDto? defaultImage = Model.Images.SingleOrDefault(i => i.PixelDensity == Image.StandardPixelDensity);
+    if (defaultImage == null)
+        defaultImage = Model.Images.First();
+
+    <div class="d-flex justify-content-center mb-3">
+        <img class="img-fluid"
+             src="@defaultImage.Url"
+             width="@defaultImage.Width"
+             height="@defaultImage.Height"
+             alt="@Model.Name"
+             @if(Model.Images.Count > 1)
+             {
+                <text>srcset="@foreach(ImageDto image in Model.Images){<text>@image.Url @(String.IsNullOrWhiteSpace(image.PixelDensity) ? image.Width + "w" : image.PixelDensity)</text>@if(image != Model.Images.Last()){<text>, </text>}}"</text>
+             }
+        >
+    </div>
+}
+
+@if (Model.WineInformation is not null || Model.Volume is not null)
+{
+    <div class="d-flex justify-content-center mb-3">
+        @if (Model.WineInformation is not null && Model.WineInformation.Type is not null)
+        {
+            <div class="p-2">
+                @Localizer[EnumHelper.GetDisplayDescription(Model.WineInformation.Type)!]
+            </div>
+        }
+
+        @if (Model.WineInformation is not null && Model.WineInformation.SugarContent is not null)
+        {
+            <div class="p-2">
+                @Localizer[EnumHelper.GetDisplayName(Model.WineInformation.SugarContent)!]
+            </div>
+        }
+
+        @if (Model.Volume is not null)
+        {
+            <div class="p-2">
+                @Html.DisplayFor(model => model.Volume)
+            </div>
+        }
+
+        @if (Model.WineInformation is not null && Model.WineInformation.Alcohol is not null)
+        {
+            <div class="p-2">
+                @Html.DisplayFor(model => model.WineInformation!.Alcohol)
+            </div>
+        }
+    </div>
+    <hr>
+}
+
+@if (Model.ProductIngredients is not null && Model.ProductIngredients.Count > 0)
+{
+    <div class="pb-3">
+        <h3>@Localizer["Ingredients"]</h3>
+        <div class="ps-2">
+
+            @Html.DisplayFor(model => model.ProductIngredients, "IngredientList")
+        
+        </div>
+        @if (Model.PackagingGases != null && Model.PackagingGases != PackagingGases.None)
+        {
+            <div class="ps-2">
+                <p>@Localizer[EnumHelper.GetDisplayName(Model.PackagingGases)!]<span>.</span></p>
+            </div>
+        }
+    </div>
+    <hr>
+}
+
+@if (Model.NutritionInformation is not null && Model.NutritionInformation.Energy is not null)
+{
+    <div class="pb-3">
+        <h3>@Localizer["Nutrition Information"]</h3>
+        <div>
+
+        @Html.DisplayFor(model => model.NutritionInformation)
+
+        </div>
+    </div>
+    <hr>
+}
+
+@if (Model.ResponsibleConsumption is not null && Model.ResponsibleConsumption.HasAny())
+{
+    <div class="pb-3">
+        <h3>@Localizer["Responsible Consumption"]</h3>
+        <div>
+
+            @Html.DisplayFor(model => model.ResponsibleConsumption)
+
+        </div>
+    </div>
+    <hr>
+}
+
+@if (Model.Certifications is not null && Model.Certifications.HasAny())
+{
+    <div class="pb-3">
+        <h3>@Localizer["Certifications"]</h3>
+        <div>
+
+            @Html.DisplayFor(model => model.Certifications)
+
+        </div>
+    </div>
+}
+
+@if (Model.FoodBusinessOperator is not null)
+{
+    <div class="pb-3">
+        <div class="text-center text-body-secondary">
+
+            @if (Model.FoodBusinessOperator.Type != 0)
+            {
+                <h3 class="fs-4">@Localizer[EnumHelper.GetDisplayDescription(Model.FoodBusinessOperator.Type)!]</h3>
+            }
+
+            <p>
+                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Name))
+                {
+                    <span>@Model.FoodBusinessOperator.Name</span>
+                    <br>
+                }
+                @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.Address))
+                {
+                    <span>@Model.FoodBusinessOperator.Address</span>
+                    <br>
+                }
+            </p>
+            @if (!String.IsNullOrWhiteSpace(Model.FoodBusinessOperator.AdditionalInfo))
+            {
+                <pre>@Model.FoodBusinessOperator.AdditionalInfo</pre>
+            }
+
+        </div>
+    </div>
+}
+
+@if (Model.Logistics?.Ean is not null || Model.Logistics?.Country is not null)
+{
+    <div class="pb-3">
+        <div class="text-center text-body-secondary">
+
+            <p>
+                @if (Model.Logistics?.Ean is not null)
+                {
+                    <span>EAN</span>
+                    Html.Raw("&nbsp;");
+                    <span class="font-monospace">@Model.Logistics?.Ean</span>
+                }
+                @if (Model.Logistics?.Country is not null)
+                {
+                    <span>@Model.Logistics?.Country</span>
+                }
+            </p>
+
+        </div>
+    </div>
+}
+
+@section MetaTags {
+    <meta property="og:title" content="@Model.Title">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="@Model.LabelUrl">
+    <meta property="og:image" content="@Model.ShareImageUrl">
+    <meta property="og:description" content="@Localizer["Ingredients and nutrition information"].">
+}

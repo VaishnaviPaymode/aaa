@@ -1,0 +1,154 @@
+﻿@using ELabel.Extensions
+@using ELabel.Areas.Admin.Components
+@model IEnumerable<ELabel.ViewModels.WineProductDetailsDto>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products</h1>
+
+<div class="d-flex justify-content-between mb-3">
+    <div class="">
+        <a asp-action="Create">Create New</a>
+    </div>
+    <div class="">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-action="Import">Import</a>
+            <a class="dropdown-item" asp-action="Export">Export</a>
+        </div>
+    </div>
+</div>
+
+<form id="search" method="post" class="form-inline">
+    <div class="input-group mb-3 flex-fill">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+        </div>
+        <input id="FilterText" name="FilterText" class="form-control" type="search" placeholder="Search by name, volume, wine vintage, wine type, wine suger content, wine appellation or SKU." value="@ViewBag.FilterText" />
+        <div class="input-group-append">
+            <input type="submit" value="Search" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
+<div id="smart-filters" class="mt-1 mb-3">
+    @foreach (var wineVintage in ViewBag.UniqueWineVintages)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@wineVintage" role="button" title="Filter for wine vintage @wineVintage">@wineVintage</a>
+    }
+    @foreach (var wineType in ViewBag.UniqueWineTypes)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(wineType)" role="button" title="Filter for wine appelation @EnumHelper.GetDisplayName(wineType)">@EnumHelper.GetDisplayName(wineType)</a>
+    }
+    @foreach (var wineSugerContent in ViewBag.UniqueWineSugarContents)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(wineSugerContent)" role="button" title="Filter for wine sugar content @EnumHelper.GetDisplayName(wineSugerContent)">@EnumHelper.GetDisplayName(wineSugerContent)</a>
+    }
+    @foreach (var wineAppelation in ViewBag.UniqueWineAppellations)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@wineAppelation" role="button" title="Filter for wine appelation @wineAppelation">@wineAppelation</a>
+    }
+    <a class="btn btn-light btn-sm text-secondary" asp-action="Index" asp-route-filterText="" role="button" title="Remove filter">All</a>
+</div>
+
+<component type="typeof(GetStarted)" render-mode="ServerPrerendered" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmName">@Html.DisplayNameFor(model => model.Name)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmVolume">@Html.DisplayNameFor(model => model.Volume)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineVintage">@Html.DisplayNameFor(model => model.WineInformation.Vintage)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineType">@Html.DisplayNameFor(model => model.WineInformation.Type)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineSugarContent">@Html.DisplayNameFor(model => model.WineInformation.SugarContent)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmWineAppelation">@Html.DisplayNameFor(model => model.WineInformation.Appellation)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmSku">@Html.DisplayNameFor(model => model.Logistics.Sku)</a>
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="clickable" data-href='/Admin/Product/Details/@item.Id'>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WineInformation.Vintage)
+            </td>
+            <td>
+                @if(item.WineInformation.Type != null)
+                {
+                    <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.WineInformation.Type)" role="button" title="@EnumHelper.GetDisplayDescription(item.WineInformation.Type)">
+                        @EnumHelper.GetDisplayName(item.WineInformation.Type)
+                    </a>
+                }
+            </td>
+            <td>
+                @if(item.WineInformation.SugarContent != null)
+                {
+                    <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.WineInformation.SugarContent)" role="button" title="@EnumHelper.GetDisplayDescription(item.WineInformation.SugarContent)">
+                            @EnumHelper.GetDisplayName(item.WineInformation.SugarContent)
+                    </a>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WineInformation.Appellation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Logistics.Sku)
+            </td>
+            <td>
+                <div class="d-flex justify-content-end align-items-center">
+                    <a class="fw-bold" asp-action="Edit" asp-route-id="@item?.Id" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                    <a class="fw-bold ms-3" asp-action="Preview" asp-route-id="@item?.Id" target="_blank" rel="external" title="Preview"><i class="bi bi-eye"></i></a>
+                    <div class="dropend">
+                        <a class="ms-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>&#x2807;</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item?.Id">Edit</a></li>
+                            @if (item != null && item.Images != null && item.Images.Count > 0)
+                            {
+                                <li><a class="dropdown-item" asp-action="DeleteImage" asp-route-id="@item.Id">Delete image</a></li>
+                            }
+                            <li><a class="dropdown-item" asp-action="ChangeImage" asp-route-id="@item?.Id">Change image</a></li>
+                            <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item?.Id">Delete</a></li>
+                            <li><a class="dropdown-item" asp-action="Duplicate" asp-route-id="@item?.Id">Duplicate</a></li>
+                            <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item?.Id">Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}

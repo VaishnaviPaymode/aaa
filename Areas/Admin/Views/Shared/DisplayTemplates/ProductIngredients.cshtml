@@ -1,0 +1,29 @@
+﻿@model List<ProductIngredientDto>
+
+<ul class="list-group list-group-flush">
+
+    @foreach (ProductIngredientDto productIngredient in Model.OrderBy(pi => pi.Order))
+    {
+        @if (productIngredient.Ingredient != null)
+        {
+            <li class="list-group-item d-flex justify-content-between" title="@productIngredient.Order">
+                <div>
+                    @productIngredient.Ingredient.Name
+                    @if (productIngredient.Ingredient.ENumber != null)
+                    {
+                        <span class="text-secondary ms-3">@Html.DisplayFor(pi => productIngredient.Ingredient.ENumber)</span>
+                    }
+                </div>
+                <div>
+                    @if (productIngredient.Ingredient.Allergen)
+                    {
+                        <span class="badge rounded-pill text-bg-warning">Allergen</span>
+                    }
+                    <span class="badge rounded-pill text-bg-light">@Html.DisplayFor(pi => productIngredient.Ingredient.Category)</span>
+                </div>
+            </li>
+        }
+    }
+
+</ul>
+

@@ -1,0 +1,49 @@
+﻿@model ResponsibleConsumption
+@inject IHtmlLocalizer<SharedResource> Localizer
+
+<div class="text-center mx-5">
+    <div class="row align-items-start">
+        @if (Model.WarningDrinkingDuringPregnancy)
+        {
+            <div class="col">
+                <figure class="figure css-tooltip">
+                    <img class="sign img-fluid m-3"
+                         width="50" height="50"
+                         loading="lazy"
+                         src="~/img/warning-drinking-during-pregnancy.svg"
+                         alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingDuringPregnancy").FirstOrDefault()?.Description ?? "Responsible Consumption"]"
+                    >
+                    <figcaption class="figure-caption css-tooltip-text">@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingDuringPregnancy").FirstOrDefault()?.Description ?? "Responsible Consumption"]</figcaption>
+                </figure>
+            </div>
+        }
+        @if (Model.WarningDrinkingBelowLegalAge)
+        {
+            <div class="col">
+                <figure class="figure css-tooltip">
+                    <img class="sign img-fluid m-3"
+                         width="50" height="50"
+                         loading="lazy"
+                         src="~/img/warning-drinking-below-legal-age.svg"
+                         alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingBelowLegalAge").FirstOrDefault()?.Description ?? "Responsible Consumption"]"
+                     >
+                    <figcaption class="figure-caption css-tooltip-text">@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingBelowLegalAge").FirstOrDefault()?.Description ?? "Responsible Consumption"]</figcaption>
+                </figure>
+            </div>
+        }
+        @if (Model.WarningDrinkingWhenDriving)
+        {
+            <div class="col">
+                <figure class="figure css-tooltip">
+                    <img class="sign img-fluid m-3"
+                         width="50" height="50"
+                         loading="lazy"
+                         src="~/img/warning-drinking-when-driving.svg"
+                         alt="@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingWhenDriving").FirstOrDefault()?.Description ?? "Responsible Consumption"]"
+                    >
+                    <figcaption class="figure-caption css-tooltip-text">@Localizer[ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "WarningDrinkingWhenDriving").FirstOrDefault()?.Description ?? "Responsible Consumption"]</figcaption>
+                </figure>
+            </div>
+        }
+    </div>
+</div>

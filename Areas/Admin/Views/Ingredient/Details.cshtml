@@ -1,0 +1,54 @@
+﻿@model ELabel.ViewModels.IngredientDto
+
+@{
+    ViewData["Title"] = "Ingredient details";
+}
+
+<h1>Ingredient</h1>
+
+<div>
+    <h4>Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ENumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ENumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Allergen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Allergen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Custom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Custom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LocalizableStrings)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalizableStrings)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

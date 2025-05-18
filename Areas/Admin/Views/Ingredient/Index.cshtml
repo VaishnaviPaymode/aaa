@@ -1,0 +1,120 @@
+﻿@using ELabel.Areas.Admin.Components
+@using ELabel.Extensions;
+@model IEnumerable<ELabel.ViewModels.IngredientDto>
+
+@{
+    ViewData["Title"] = "Ingredients";
+}
+
+<h1>Ingredients</h1>
+
+<div class="d-flex justify-content-between mb-3">
+    <div class="">
+        <a asp-action="Create">Create New</a>
+    </div>
+    <div class="">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-action="Import">Import</a>
+            <a class="dropdown-item" asp-action="Export">Export</a>
+        </div>
+    </div>
+</div>
+
+<form id="search" method="post" class="form-inline">
+    <div class="input-group mb-3 flex-fill">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+        </div>
+        <input id="FilterText" name="FilterText" class="form-control" type="search" placeholder="Search by name, category or allergen." value="@ViewBag.FilterText" />
+        <div class="input-group-append">
+            <input type="submit" value="Search" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
+<div id="smart-filters" class="mt-1 mb-3">
+    @foreach (var category in ViewBag.TopFiveCategories)
+    {
+        <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(category)" role="button" title="Filter for category @EnumHelper.GetDisplayName(category)">@EnumHelper.GetDisplayName(category)</a>
+    }
+    <a class="btn btn-light btn-sm text-warning" asp-action="Index" asp-route-filterText="Allergen" role="button" title="Filter with Allergen">Allergen</a>
+    <a class="btn btn-light btn-sm text-secondary" asp-action="Index" asp-route-filterText="" role="button" title="Remove filter">All</a>
+</div>
+
+<component type="typeof(GetStarted)" render-mode="ServerPrerendered" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmName">@Html.DisplayNameFor(model => model.Name)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmCategory">@Html.DisplayNameFor(model => model.Category)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmENumber">@Html.DisplayNameFor(model => model.ENumber)</a>
+            </th>
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmAllergen">@Html.DisplayNameFor(model => model.Allergen)</a>
+            </th>
+            @*
+            <th scope="col">
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SortParmCustom">@Html.DisplayNameFor(model => model.Custom)</a>
+            </th>
+            *@
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="clickable" data-href='/Admin/Ingredient/Details/@item.Id'>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a class="btn btn-light btn-sm" asp-action="Index" asp-route-filterText="@EnumHelper.GetDisplayName(item.Category)" role="button" title="@EnumHelper.GetDisplayDescription(item.Category)">
+                        @EnumHelper.GetDisplayName(item.Category)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ENumber)
+            </td>
+            <td>
+                @if(item.Allergen)
+                {
+                    <i class="bi bi-check-lg text-warning"></i>
+                }
+            </td>
+            @*
+            <td>
+                @Html.DisplayFor(modelItem => item.Custom)
+            </td>
+            *@
+            <td>
+                <div class="dropend">
+                    <a class="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>&#x2807;</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a></li>
+                        <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Details</a></li>
+                        <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item.Id">Delete</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}

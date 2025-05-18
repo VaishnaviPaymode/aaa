@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+@using System.Globalization
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    IRequestCultureFeature requestCulture = Context.Features.Get<IRequestCultureFeature>()!;
+
+    IList<SelectListItem> cultureItems = LocOptions.Value.SupportedUICultures!
+                                                         .Select(c => new SelectListItem { Value = c.TwoLetterISOLanguageName, Text = StringHelper.FirstCharToUpper(c.NativeName) })
+                                                         .ToList();
+
+    string urlPath = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+}
+
+<div>
+    <form id="formLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-urlPath="@urlPath" asp-antiforgery="false" method="post">
+        <svg class="bi" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+            <use xlink:href="/lib/bootstrap-icons/bootstrap-icons.svg#translate" />
+        </svg>
+        <select id="selectlanguage"
+                name="culture"
+                class="ms-2 pointer"
+                title="@Localizer["Select language"]"
+                aria-label="@Localizer["Select language"]"
+                asp-for="@requestCulture.RequestCulture.UICulture.TwoLetterISOLanguageName"
+                asp-items="cultureItems">
+        </select>
+    </form>
+</div>

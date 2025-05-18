@@ -1,0 +1,56 @@
+﻿@model NutritionInformation
+@inject IHtmlLocalizer<SharedResource> Localizer
+
+<table class="table table-responsive caption-top w-100 mb-3">
+    <caption class="text-end border-bottom pe-2">@Localizer["Nutritions per"]&nbsp;@Html.DisplayFor(model => model.PortionVolume)</caption>
+
+    <tbody>
+        <tr>
+            <th scope="row" rowspan="2">@Localizer["Energy"]</th>
+            <td class="text-end">
+                <energy value="@Model.Energy.KilojouleValue" unit="kJ"></energy>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-end">
+                <energy value="@Model.Energy.Kilocalorie" unit="kcal"></energy>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="border-0">@Localizer["Fat"]</th>
+            <td class="text-end">
+                <nutrient value="@Model.FatTotal" tolerance="0.5f" max-decimals="1" unit="g"></nutrient>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="fst-italic ps-5">@Localizer["of which Saturates"]</th>
+            <td class="text-end">
+                <nutrient value="@Model.FatSaturates" tolerance="0.1f" max-decimals="1" unit="g"></nutrient>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="border-0">@Localizer["Carbohydrate"]</th>
+            <td class="text-end">
+                <nutrient value="@Model.CarbohydrateTotal" tolerance="0.5f" max-decimals="1" unit="g"></nutrient>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="fst-italic ps-5">@Localizer["of which Sugars"]</th>
+            <td class="text-end">
+                <nutrient value="@Model.CarbohydrateSugar" tolerance="0.5f" max-decimals="1" unit="g"></nutrient>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">@Localizer["Protein"]</th>
+            <td class="text-end">
+                <nutrient value="@Model.Protein" tolerance="0.5f" max-decimals="1" unit="g"></nutrient>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">@Localizer["Salt"]</th>
+            <td class="text-end text-break">
+                <nutrient value="@Model.Salt" tolerance="0.0125f" max-decimals="2" unit="g"></nutrient>
+            </td>
+        </tr>
+    </tbody>
+</table>

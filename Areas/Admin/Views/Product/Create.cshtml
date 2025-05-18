@@ -1,0 +1,64 @@
+﻿@model ELabel.ViewModels.WineProductCreateDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" aria-describedby="NameHelp" />
+                <div id="NameHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Name").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Volume" class="form-label"></label>
+                <input asp-for="Volume" class="form-control" aria-describedby="VolumeHelp" />
+                <div id="VolumeHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Volume").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Volume" class="text-danger"></span>
+            </div>
+
+            @Html.EditorFor(model => model.WineInformation)
+
+            @*
+            <div class="mb-3">
+                <label asp-for="Country" class="form-label"></label>
+                <input asp-for="Country" class="form-control" aria-describedby="CountryHelp" />
+                <div id="CountryHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Country").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Sku" class="form-label"></label>
+                <input asp-for="Sku" class="form-control" aria-describedby="SkuHelp" />
+                <div id="SkuHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Sku").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Sku" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Ean" class="form-label"></label>
+                <input asp-for="Ean" class="form-control" aria-describedby="EanHelp" />
+                <div id="EanHelp" class="form-text">@ViewData.ModelMetadata.Properties.Where(m => m.PropertyName == "Ean").FirstOrDefault()?.Description</div>
+                <span asp-validation-for="Ean" class="text-danger"></span>
+            </div>
+            *@
+            <div class="mb-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
