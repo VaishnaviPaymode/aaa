@@ -1,25 +1,27 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy csproj and restore dependencies
+COPY ["./ELabel.csproj", "./"]
+RUN dotnet restore
+
+# Copy everything else and build
+COPY . .
+RUN dotnet build --no-restore -c Release
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER app
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
-
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["ELabel.csproj", "."]
-RUN dotnet restore "./ELabel.csproj"
-COPY . .
-WORKDIR "/src/."
-RUN dotnet build "ELabel.csproj" -c $BUILD_CONFIGURATION -o /app/build
+EXPOSE 80
+EXPOSE 443
 
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "ELabel.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish --no-build -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "ELabel.dll"]
+# Replace this line:
+COPY ["./ELabel.csproj", "./"]
+# With the correct project file name, for example:
+COPY ["*.csproj", "./"]
