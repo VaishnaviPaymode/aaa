@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Fix this line: point to the actual subfolder
-COPY ["./ELabel.csproj", "./"]
+ COPY ["./ELabel.csproj", "./"]
 RUN dotnet restore "./ELabel.csproj"
 
 # Copy rest of the source
