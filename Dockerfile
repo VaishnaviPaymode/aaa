@@ -2,8 +2,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy csproj and restore dependencies
-COPY ["./ELabel.csproj", "./"]
-RUN dotnet restore
+COPY ["ELabel/ELabel.csproj", "ELabel/"]
+
+RUN dotnet restore "ELabel/ELabel.csproj"
+
 
 # Copy everything else and build
 COPY . .
